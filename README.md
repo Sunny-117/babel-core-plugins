@@ -2,9 +2,7 @@
 
 an babel plugin that for dev debug
 
-# 前置知识：AST
 
-https://lihautan.com/babel-ast-explorer/#?eyJiYWJlbFNldHRpbmdzIjp7InZlcnNpb24iOiI3LjYuMCJ9LCJ0cmVlU2V0dGluZ3MiOnsiaGlkZUVtcHR5Ijp0cnVlLCJoaWRlTG9jYXRpb24iOnRydWUsImhpZGVUeXBlIjp0cnVlLCJoaWRlQ29tbWVudHMiOnRydWV9LCJjb2RlIjoiY29uc3QgYSA9IDE7XG5jb25zdCB2ID0gMjsifQ==
 
 ## why
 
@@ -53,3 +51,14 @@ module.exports = {
   },
 };
 ```
+
+# 开发思路：
+## 前置知识：AST
+
+https://lihautan.com/babel-ast-explorer/#?eyJiYWJlbFNldHRpbmdzIjp7InZlcnNpb24iOiI3LjYuMCJ9LCJ0cmVlU2V0dGluZ3MiOnsiaGlkZUVtcHR5Ijp0cnVlLCJoaWRlTG9jYXRpb24iOnRydWUsImhpZGVUeXBlIjp0cnVlLCJoaWRlQ29tbWVudHMiOnRydWV9LCJjb2RlIjoiY29uc3QgYSA9IDE7XG5jb25zdCB2ID0gMjsifQ==
+
+## 说明
+
+1. 在`dev`环境下可执行
+
+2. 到了`prod`环境下代码会被移除
