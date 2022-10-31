@@ -62,3 +62,10 @@ https://lihautan.com/babel-ast-explorer/#?eyJiYWJlbFNldHRpbmdzIjp7InZlcnNpb24iOi
 1. 在`dev`环境下可执行
 
 2. 到了`prod`环境下代码会被移除
+
+打包
+```shell
+npm run build
+```
+
+```serve``` 命令来启动打包结果
