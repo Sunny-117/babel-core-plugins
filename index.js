@@ -26,7 +26,8 @@ module.exports = function ({ types: t }) {
        */
 
 
-      StringLiteral(path) {
+      StringLiteral(path, state) {
+        console.log('————————————————————————', state, '————————————————————————')
         const parentNodeIsIfStatement = t.isIfStatement(path.parent);
         const isDebug = path.node.value === "DEBUG";
 
