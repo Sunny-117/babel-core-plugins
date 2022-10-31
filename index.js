@@ -14,6 +14,7 @@ module.exports = function ({ types: t }) {
          * 名字是DEBUG  父级是 isIfStatement(if语句) 则满足
          */
         if (isDebug && parentNodeIsIfStatement) {
+          // 把 Identifier 转成 String(stringLiteral)
           const stringNode = t.stringLiteral("DEBUG");
           path.replaceWith(stringNode);
         }
