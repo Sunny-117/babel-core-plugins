@@ -3,6 +3,7 @@ module.exports = function ({ types: t }) {
     // babel插件的执行是通过vistitor设计模式执行的
     visitor: {
       Identifier(path) { // 遇到标识符就会触发：Identifier
+        console.log('=======', path.node.name, '=======')
         const parentNodeIsIfStatement = t.isIfStatement(path.parent);
         const isDebug = path.node.name === "DEBUG";
 
