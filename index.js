@@ -28,7 +28,7 @@ module.exports = function ({ types: t }) {
 
       StringLiteral(path, state) {
 
-        console.log('————————————————————————', state, '————————————————————————')// opts: {},可以让外部用户来控制，不需要写在插件内部来
+        console.log('————————————————————————', state, '————————————————————————')// opts: {},可以让外部用户来控制，不需要写在插件内部了
         const parentNodeIsIfStatement = t.isIfStatement(path.parent);
         const isDebug = path.node.value === "DEBUG";
 

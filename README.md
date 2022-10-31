@@ -2,7 +2,7 @@
 
 an babel plugin that for dev debug
 
-
+命名规范：前缀：`babel-plugin`
 
 ## why
 
