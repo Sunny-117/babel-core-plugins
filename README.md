@@ -2,6 +2,8 @@
 
 an babel plugin that for dev debug
 
+# 前置知识：AST
+
 ## why
 
 Sometimes we need to write some logic in the development environment for debugging and development purposes
