@@ -20,6 +20,11 @@ module.exports = function ({ types: t }) {
         }
       },
 
+      /**
+       * 以上，就实现了把
+       * 
+       */
+
       StringLiteral(path) {
         const parentNodeIsIfStatement = t.isIfStatement(path.parent);
         const isDebug = path.node.value === "DEBUG";
