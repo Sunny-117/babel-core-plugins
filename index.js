@@ -3,7 +3,7 @@ module.exports = function ({ types: t }) {
     // babel插件的执行是通过vistitor设计模式执行的
     visitor: {
       Identifier(path) { // 遇到标识符就会触发：Identifier
-        console.log('=======', path.node.name, '=======')
+        // console.log('=======', path.node.name, '=======')
         const parentNodeIsIfStatement = t.isIfStatement(path.parent);
 
         /**
@@ -28,7 +28,7 @@ module.exports = function ({ types: t }) {
 
       StringLiteral(path, state) {
 
-        console.log('————————————————————————', state, '————————————————————————')// opts: {},可以让外部用户来控制，不需要写在插件内部了
+        // console.log('————————————————————————', state, '————————————————————————')// opts: {},可以让外部用户来控制，不需要写在插件内部了
         const parentNodeIsIfStatement = t.isIfStatement(path.parent);
         const isDebug = path.node.value === "DEBUG";
 
