@@ -5,6 +5,10 @@ module.exports = function ({ types: t }) {
       Identifier(path) { // 遇到标识符就会触发：Identifier
         console.log('=======', path.node.name, '=======')
         const parentNodeIsIfStatement = t.isIfStatement(path.parent);
+
+        /**
+         * https://www.babeljs.cn/docs/babel-types#ifstatement
+         */
         const isDebug = path.node.name === "DEBUG";
         /**
          * 名字是DEBUG  父级是 isIfStatement(if语句) 则满足
