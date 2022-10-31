@@ -6,7 +6,9 @@ module.exports = function ({ types: t }) {
         console.log('=======', path.node.name, '=======')
         const parentNodeIsIfStatement = t.isIfStatement(path.parent);
         const isDebug = path.node.name === "DEBUG";
-
+        /**
+         * 名字是DEBUG  父级是isIfStatement 则满足
+         */
         if (isDebug && parentNodeIsIfStatement) {
           const stringNode = t.stringLiteral("DEBUG");
           path.replaceWith(stringNode);
