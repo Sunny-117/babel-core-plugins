@@ -1,5 +1,6 @@
 module.exports = function ({ types: t }) {
   return {
+    // babel插件的执行是通过vistitor设计模式执行的
     visitor: {
       Identifier(path) {
         const parentNodeIsIfStatement = t.isIfStatement(path.parent);
