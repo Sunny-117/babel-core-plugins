@@ -21,8 +21,8 @@ module.exports = function ({ types: t }) {
       },
 
       /**
-       * 以上，就实现了把
-       * 
+       * 以上，就实现了把`const a = 10;const b = 20;if(DEBUG){console.log("heihei")}`
+       * 替换成了`const a = 10;const b = 20;if("DEBUG"){console.log("heihei")}`
        */
 
       StringLiteral(path) {
