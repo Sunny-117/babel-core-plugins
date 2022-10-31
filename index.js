@@ -25,6 +25,7 @@ module.exports = function ({ types: t }) {
        * 替换成了`const a = 10;const b = 20;if("DEBUG"){console.log("heihei")}`
        */
 
+
       StringLiteral(path) {
         const parentNodeIsIfStatement = t.isIfStatement(path.parent);
         const isDebug = path.node.value === "DEBUG";
