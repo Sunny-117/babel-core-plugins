@@ -1,5 +1,5 @@
 const babel = require("@babel/core");
-const plugin = require("../");
+const plugin = require("..");
 const inputCode = `
         const a = 10;
         const b = 20;
