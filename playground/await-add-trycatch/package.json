@@ -6,7 +6,6 @@
     "serve": "vue-cli-service serve"
   },
   "dependencies": {
-    "babel-plugin-dev-debug": "link:../packages/babel-plugin-dev-debug",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
