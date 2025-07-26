@@ -48,24 +48,24 @@ export async function collectDependencies(
       target: 'esnext'
     });
 
-    // 遍历AST寻找import声明
-    const traverseModule = (module: Module) => {
-      module.body.forEach((node) => {
-        if (node.type === 'ImportDeclaration') {
-          const importNode = node as ImportDeclaration;
-          const depPath = importNode.source.value;
-          const depAbsolutePath = path.resolve(path.dirname(entryFile), depPath);
-          
-          // 添加依赖
-          graph[entryFile].deps.push(depAbsolutePath);
-          
-          // 递归处理依赖
-          collectDependencies(depAbsolutePath, graph);
-        }
-      });
-    };
+    // 收集所有导入依赖
+    const importDeclarations = ast.body.filter(
+      (node): node is ImportDeclaration => node.type === 'ImportDeclaration'
+    );
 
-    traverseModule(ast);
+    // 处理所有依赖
+    await Promise.all(
+      importDeclarations.map(async (importNode) => {
+        const depPath = importNode.source.value;
+        const depAbsolutePath = path.resolve(path.dirname(entryFile), depPath);
+        
+        // 添加依赖
+        graph[entryFile].deps.push(depAbsolutePath);
+        
+        // 递归处理依赖并等待完成
+        await collectDependencies(depAbsolutePath, graph);
+      })
+    );
   } catch (error) {
     console.error(`Error parsing ${entryFile}:`, error);
   }
