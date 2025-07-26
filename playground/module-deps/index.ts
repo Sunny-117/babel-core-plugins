@@ -1,4 +1,4 @@
-import { collectDependencies } from './core';
+import { collectDependencies } from './core-swc';
 
 async function main() {
   try {
