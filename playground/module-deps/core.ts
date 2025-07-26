@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from '@babel/parser';
+// @ts-expect-error
 import t from '@babel/traverse';
 import type { ImportDeclaration } from '@babel/types';
 
