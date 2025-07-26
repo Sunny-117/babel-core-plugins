@@ -24,8 +24,9 @@ export async function collectDependencies(
   entryFile: string,
   graph: DependencyGraph = {}
 ): Promise<DependencyGraph> {
-  // 避免重复处理
+  // 避免重复处理：解决循环依赖
   if (graph[entryFile]) {
+    console.warn('循环依赖', entryFile);
     return graph;
   }
 
